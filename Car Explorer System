@@ -1,0 +1,48 @@
+#include <iostream> 
+#include <string> 
+using namespace std; 
+class Car {
+public:
+string name;
+string engine; 
+string horsepower;
+string fuelEconomy; 
+string price;
+Car(string n, string e, string hp, string fe, string p) { 
+name = n;
+engine = e; 
+horsepower = hp; 
+fuelEconomy = fe; 
+price = p;
+}
+void displayInfo() {
+cout << "Car: " << name << endl;
+cout << "Engine: " << engine << endl;
+cout << "Horsepower: " << horsepower << endl; 
+cout << "Fuel Economy: " << fuelEconomy << endl; 
+cout << "Price: " << price << endl;
+}
+};
+int main() {
+Car toyotaCamry("Toyota Camry", "2.5L 4-Cylinder", "203 hp", "28 city
+5
+/ 39 highway mpg", "$24,970");
+Car hondaCivic("Honda Civic", "2.0L 4-Cylinder", "158 hp", "30 city / 
+38 highway mpg", "$22,700");
+Car fordMustang("Ford Mustang", "5.0L V8", "450 hp", "15 city / 24 
+highway mpg", "$27,155");
+string userCarChoice;
+cout << "Enter the name of the car (Toyota Camry, Honda Civic, Ford 
+Mustang): ";
+cin >> userCarChoice;
+if (userCarChoice == "Toyota") { 
+toyotaCamry.displayInfo();
+} else if (userCarChoice == "Honda") { 
+hondaCivic.displayInfo();
+} else if (userCarChoice == "Ford") { 
+fordMustang.displayInfo();
+} else {
+cout << "Sorry, we don't have information on that car." << endl;
+}
+return 0;
+}
